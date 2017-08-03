@@ -1,4 +1,4 @@
-var isValueEqual = require('./value-equal');
+var isValueEqual = module.exports = require('./value-equal');
 isValueEqual['0'] = require('./0');
 isValueEqual.arrayLike = require('./array-like');
 isValueEqual.array = require('./array');
