@@ -1,4 +1,4 @@
-var isOf = require('../of');
+var isInstance = require('../instance');
 module.exports = function (item) {
-    return isOf(item, RegExp);
+    return isInstance(item, RegExp);
 };

@@ -2,7 +2,7 @@ module.exports = isEqual;
 var CONSTRUCTOR = 'constructor';
 var toString = {}.toString;
 var is0 = require('../0');
-var isOf = require('../of');
+var isInstance = require('../instance');
 var isStrictlyEqual = require('../strictly-equal');
 var isNil = require('../nil');
 var isObject = require('../object');
@@ -70,7 +70,7 @@ function isEqual(a, b, aStack_, bStack_) {
         // from different frames are.
         aCtor = a[CONSTRUCTOR];
         bCtor = b[CONSTRUCTOR];
-        if (aCtor !== bCtor && !(isFunction(aCtor) && isOf(aCtor, aCtor) && isFunction(bCtor) && isOf(bCtor, bCtor)) && (CONSTRUCTOR in a && CONSTRUCTOR in b)) {
+        if (aCtor !== bCtor && !(isFunction(aCtor) && isInstance(aCtor, aCtor) && isFunction(bCtor) && isInstance(bCtor, bCtor)) && (CONSTRUCTOR in a && CONSTRUCTOR in b)) {
             return false;
         }
     }
