@@ -5,6 +5,7 @@ isValueEqual.array = require('./array');
 isValueEqual.boolean = require('./boolean');
 isValueEqual.defined = require('./defined');
 isValueEqual.emptyArray = require('./empty-array');
+isValueEqual.equal = require('./equal');
 isValueEqual.false = require('./false');
 isValueEqual.falsey = require('./falsey');
 isValueEqual.finite = require('./finite');

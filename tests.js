@@ -4,6 +4,7 @@ require('./array/index.test');
 require('./boolean/index.test');
 require('./defined/index.test');
 require('./empty-array/index.test');
+require('./equal/index.test');
 require('./false/index.test');
 require('./falsey/index.test');
 require('./finite/index.test');
