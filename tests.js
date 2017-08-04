@@ -1,6 +1,7 @@
 require('./0/index.test');
 require('./array-like/index.test');
 require('./array/index.test');
+require('./binary-match/index.test');
 require('./boolean/index.test');
 require('./defined/index.test');
 require('./empty-array/index.test');

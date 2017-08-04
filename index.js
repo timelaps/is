@@ -2,6 +2,7 @@ var isValueEqual = module.exports = require('./value-equal');
 isValueEqual['0'] = require('./0');
 isValueEqual.arrayLike = require('./array-like');
 isValueEqual.array = require('./array');
+isValueEqual.binaryMatch = require('./binary-match');
 isValueEqual.boolean = require('./boolean');
 isValueEqual.defined = require('./defined');
 isValueEqual.emptyArray = require('./empty-array');
