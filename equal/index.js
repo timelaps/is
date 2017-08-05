@@ -24,16 +24,16 @@ function isEqual(a, b, aStack_, bStack_) {
     var aStack, bStack, className, areArrays, aCtor, bCtor, length, objKeys, key, aNumber, bNumber;
     // Identical objects are equal. `0 === -0`, but they aren't identical.
     // See the [Harmony `egal` proposal](http://wiki.ecmascript.org/doku.php?id=harmony:egal).
-    if (isStrictlyEqual(a, b)) {
-        return !is0(a) || isStrictlyEqual(1 / a, 1 / b);
+    if (a === b) {
+        return !is0(a) || (1 / a === 1 / b);
     }
     // A strict comparison is necessary because `NULL == undefined`.
     if (isNil(a) || isNil(b)) {
-        return isStrictlyEqual(a, b);
+        return a === b;
     }
     // Compare `[[Class]]` names.
     className = objectToString(a);
-    if (!isStrictlyEqual(className, objectToString(b))) {
+    if (className !== objectToString(b)) {
         return false;
     }
     switch (className) {
@@ -43,25 +43,25 @@ function isEqual(a, b, aStack_, bStack_) {
     case createToStringResult('String'):
         // Primitives and their corresponding object wrappers are equivalent; thus, `"5"` is
         // equivalent to `new String("5")`.
-        return isStrictlyEqual('' + a, '' + b);
+        return '' + a === '' + b;
     case createToStringResult('Number'):
         // `NaN`s are equivalent, but non-reflexive.
         // Object(NaN) is equivalent to NaN
         aNumber = toNumber(a);
         bNumber = toNumber(b);
-        if (!isStrictlyEqual(aNumber, aNumber)) {
-            return isStrictlyEqual(bNumber, bNumber);
+        if (aNumber !== aNumber) {
+            return bNumber === bNumber;
         }
         // An `egal` comparison is performed for other numeric values.
-        return is0(aNumber) ? isStrictlyEqual(1 / aNumber, 1 / b) : isStrictlyEqual(aNumber, bNumber);
+        return is0(aNumber) ? 1 / aNumber === 1 / b : aNumber === bNumber;
     case createToStringResult('Date'):
     case createToStringResult('Boolean'):
         // Coerce dates and booleans to numeric primitive values. Dates are compared by their
         // millisecond representations. Note that invalid dates with millisecond representations
         // of `NaN` are not equivalent.
-        return isStrictlyEqual(toNumber(a), toNumber(b));
+        return toNumber(a) === toNumber(b);
     }
-    areArrays = isStrictlyEqual(className, createToStringResult('Array'));
+    areArrays = className === createToStringResult('Array');
     if (!areArrays) {
         if (!isObject(a) || !isObject(b)) {
             return false;
@@ -84,8 +84,8 @@ function isEqual(a, b, aStack_, bStack_) {
     while (length--) {
         // Linear search. Performance is inversely proportional to the number of
         // unique nested structures.
-        if (isStrictlyEqual(aStack[length], a)) {
-            return isStrictlyEqual(bStack[length], b);
+        if (aStack[length] === a) {
+            return bStack[length] === b;
         }
     }
     // Add the first object to the stack of traversed objects.
@@ -95,7 +95,7 @@ function isEqual(a, b, aStack_, bStack_) {
     if (areArrays) {
         // Compare array lengths to determine if a deep comparison is necessary.
         length = a.length;
-        if (!isStrictlyEqual(length, b.length)) {
+        if (length !== b.length) {
             return false;
         }
         // Deep compare the contents, ignoring non-numeric properties.
@@ -109,7 +109,7 @@ function isEqual(a, b, aStack_, bStack_) {
         objKeys = keys(a);
         length = objKeys.length;
         // Ensure that both objects contain the same number of properties before comparing deep equality.
-        if (!isStrictlyEqual(keys(b).length, length)) {
+        if (keys(b).length !== length) {
             return false;
         }
         while (length--) {
