@@ -1,4 +1,5 @@
-var isStrictlyEqual = require('../strictly-equal');
+var isFalse = require('../false');
+var toBoolean = require('@timelaps/hacks/to-boolean');
 module.exports = function (item) {
-    return isStrictlyEqual(!!item, false);
+    return isFalse(toBoolean(item));
 };

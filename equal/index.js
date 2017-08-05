@@ -3,7 +3,6 @@ var CONSTRUCTOR = 'constructor';
 var toString = {}.toString;
 var is0 = require('../0');
 var isInstance = require('../instance');
-var isStrictlyEqual = require('../strictly-equal');
 var isNil = require('../nil');
 var isObject = require('../object');
 var is0 = require('../0');

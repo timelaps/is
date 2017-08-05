@@ -26,7 +26,6 @@ require('./object/index.test');
 require('./promise/index.test');
 require('./reg-exp/index.test');
 require('./same/index.test');
-// require('./strictly-equal/index.test');
 require('./string/index.test');
 require('./symbol/index.test');
 require('./thennable/index.test');

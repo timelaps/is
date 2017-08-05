@@ -1,4 +1,4 @@
-var isStrictlyEqual = require('../strictly-equal');
+var toBoolean = require('@timelaps/hacks/to-boolean');
 module.exports = function isWindow(windo) {
-    return windo ? isStrictlyEqual(windo, windo.global) : false;
+    return toBoolean(windo && (windo === windo.global || windo === windo.window));
 };
