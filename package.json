@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@timelaps/constants": "^1.0.2",
-    "@timelaps/hacks": "^1.0.0"
+    "@timelaps/constants": "^1.0.5",
+    "@timelaps/hacks": "^1.0.3"
   },
   "devDependencies": {
-    "@timelaps/batterie": "^1.0.70"
+    "@timelaps/batterie": "^1.0.73"
   },
   "scripts": {
     "test": "node test.js",

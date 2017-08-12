@@ -34,6 +34,7 @@ require('./truthy/index.test');
 require('./type-wrap/index.test');
 require('./undefined/index.test');
 require('./valid-date/index.test');
+require('./valid-index/index.test');
 require('./valid-integer/index.test');
 require('./value/index.test');
 require('./window/index.test');
