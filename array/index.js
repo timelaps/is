@@ -1,1 +1,1 @@
-module.exports = Array.isArray;
+module.exports = Array.isArray || require('../type-wrap')('Array');
