@@ -1,4 +1,1 @@
-module.exports = require('../type-wrap')('object', function (item) {
-    // check null
-    return !!item;
-});
+module.exports = require('../type-wrap')('object', require('@timelaps/hacks/to-boolean'));
