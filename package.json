@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "@timelaps/constants": "^1.0.5",
-    "@timelaps/hacks": "^1.0.3"
+    "@timelaps/hacks": "^1.0.5"
   },
   "devDependencies": {
     "@timelaps/batterie": "^1.0.73"
