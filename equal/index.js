@@ -9,6 +9,7 @@ var is0 = require('../0');
 var createToStringResult = require('@timelaps/hacks/to-string-result');
 var toNumber = require('@timelaps/hacks/to-number');
 var objectToString = require('@timelaps/hacks/call-to-string');
+var isFunction = require('../function');
 
 function has(object, key) {
     return object && object.hasOwnProperty(key);

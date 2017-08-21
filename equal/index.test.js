@@ -10,4 +10,9 @@ b.describe('isEqual', function () {
     b.expect(isEqual(function () {}, function () {})).toBeFalse();
     b.expect(isEqual(true, true)).toBeTrue();
     b.expect(isEqual(false, true)).toBeFalse();
+    b.expect(isEqual(new A(), new B())).notToBeTrue();
+
+    function A() {}
+
+    function B() {}
 });
