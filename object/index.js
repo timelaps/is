@@ -1,1 +1,0 @@
-module.exports = require('../type-wrap')('object', require('@timelaps/hacks/to-boolean'));

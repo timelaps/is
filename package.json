@@ -1,18 +1,33 @@
 {
   "name": "@timelaps/is",
-  "version": "1.0.15",
-  "description": "",
-  "main": "index.js",
+  "version": "1.0.16",
+  "description": "check what your variable is",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npm run clean && tsc",
+    "clean": "rm -rf ./dist ./coverage",
+    "test": "npm run build && jest --runInBand",
+    "share": "npm version patch && git push && npm publish"
+  },
   "dependencies": {
-    "@timelaps/constants": "^1.0.5",
-    "@timelaps/hacks": "^1.0.5"
+    "@timelaps/constants": "^1.0.9",
+    "@timelaps/hacks": "^1.0.11"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm t && jest-coverage-badges"
+    }
   },
   "devDependencies": {
-    "@timelaps/batterie": "^1.0.73"
-  },
-  "scripts": {
-    "test": "node test.js",
-    "share": "npm version patch && git push && npm publish"
+    "@types/jest": "^24.0.12",
+    "@types/node": "^12.0.0",
+    "husky": "^2.2.0",
+    "jest": "^24.8.0",
+    "jest-chain": "^1.1.2",
+    "jest-coverage-badges": "^1.1.2",
+    "jest-extended": "^0.11.1",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.4.5"
   },
   "repository": {
     "type": "git",

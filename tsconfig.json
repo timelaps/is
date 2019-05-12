@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "lib": ["es2015", "dom"],
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "strict": true,
+    "declaration": true,
+    "rootDirs": ["src/"],
+    "incremental": true,
+    "noErrorTruncation": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "showConfig": true,
+    "target": "es5"
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "./src/**/*.ts"
+  ]
+}
