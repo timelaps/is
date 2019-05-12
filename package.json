@@ -1,7 +1,7 @@
 {
   "name": "@timelaps/is",
   "version": "1.0.15",
-  "description": "",
+  "description": "check what your variable is",
   "main": "dist/index.js",
   "scripts": {
     "build": "npm run clean && tsc",
