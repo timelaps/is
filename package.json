@@ -1,21 +1,22 @@
 {
   "name": "@timelaps/is",
-  "version": "1.0.16",
+  "version": "2.0.0",
   "description": "check what your variable is",
   "main": "dist/index.js",
   "scripts": {
     "build": "npm run clean && tsc",
     "clean": "rm -rf ./dist ./coverage",
     "test": "npm run build && jest --runInBand",
+    "badges": "jest-coverage-badges",
     "share": "npm version patch && git push && npm publish"
   },
   "dependencies": {
-    "@timelaps/constants": "^1.0.9",
-    "@timelaps/hacks": "^1.0.11"
+    "@timelaps/constants": "^2.0.1",
+    "@timelaps/hacks": "^2.0.0"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm t && jest-coverage-badges"
+      "pre-commit": "npm t && npm run badges"
     }
   },
   "devDependencies": {
